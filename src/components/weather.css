@@ -1,0 +1,80 @@
+body {
+    /* overflow: hidden; */
+    background-color: #87CEEB;
+    position: relative;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+        /* background-color: #f0f0f0; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin: 0; 
+    
+    /* Light blue background color */
+}
+
+h1{
+    text-align: center;
+        font-weight: 900;
+        font-style: italic;
+        position: relative;
+        /* white-space: nowrap; */
+        /* Prevent text from wrapping */
+        /* overflow: hidden; */
+        /* Hide overflow */
+        /* animation: moveText 5s linear infinite; */
+            /* Apply animation */
+        text-decoration: underline;
+        /* font-style: ; */
+}
+/* .container {
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+} */
+
+/* .animated-table {
+    border-collapse: collapse;  
+    width: 100%;
+    
+} */
+
+.animated-table th,
+.animated-table td {
+    padding: 12px 15px;
+    text-align: center;
+    font-style: italic;
+    border-bottom: 1px solid #ddd;
+}
+
+.animated-table th {
+    background-color: #cc1753f5;
+    color: rgb(222, 253, 47);
+    font-weight: 900;
+}
+
+.animated-table tbody tr:nth-child(even) {
+    background-color: #ccf7ee;
+}
+
+.animated-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.animated-table tbody tr {
+    transition: transform 0.3s ease-in-out;
+}
+
+.animated-table tbody tr:hover {
+    transform: scale(1.02);
+}
+/* table{
+    border: 2px solid black;
+    text-align: center;
+    
+} */
+th{
+    /* border: 2px solid black; */
+    font-size: 35px;
+}
+
