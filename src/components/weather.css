@@ -1,7 +1,7 @@
 body {
     /* overflow: hidden; */
     background-color: #87CEEB;
-    position: relative;
+    /* position: relative; */
     font-family: Georgia, 'Times New Roman', Times, serif;
         /* background-color: #f0f0f0; */
     /* display: flex; */
@@ -9,6 +9,7 @@ body {
     align-items: center;
     /* height: 100vh; */
     margin: 0; 
+    font-weight: bolder
     
     /* Light blue background color */
 }
@@ -78,3 +79,86 @@ th{
     font-size: 35px;
 }
 
+.search-bar {
+    /* margin-top: 20px; */
+    /* display: flex; */
+    align-items: center;
+    
+}
+
+.search-bar input[type="text"] {
+    width: 400px;
+    height: 40px;
+    padding: 10px;
+    font-size: 35px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    background-color: #ff4ba5;
+    align-items: center;
+}
+
+.search-bar button {
+    height: 40px;
+    padding: 0 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+.container{
+    margin-top: 30px;
+}
+
+body {
+    /* overflow: hidden; */
+    position: relative;
+    background-color: #87CEEB;
+    /* Light blue background color */
+}
+
+.cloud {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background-image: url('https://openweathermap.org/img/wn/04d@2x.png');
+    /* Cloud image */
+    background-size: cover;
+    animation: moveCloud 20s linear infinite;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+@keyframes moveCloud {
+    0% {
+        transform: translateX(-200px);
+        /* Move the cloud from left to right */
+    }
+
+    100% {
+        transform: translateX(calc(100vw + 200px));
+        /* Move the cloud off-screen to the right */
+    }
+}
+
+.autocomplete-item{
+    border: 1px solid rgb(5, 5, 5);
+    width: 300px;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: #ddd;
+    margin: 3px;
+
+}
+.autocomplete-item:hover{
+    text-decoration: underline;
+    background-color: #4be4ff;
+    cursor: pointer;
+}
