@@ -1,21 +1,24 @@
-// import react from 'react';
+import react from 'react';
 import { useState,useEffect } from "react";
 import './weather.css';
+import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Weather=()=>{
     const [cities, setCities]=useState([]);
-     const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     // const [page, setPage] = useState(1);
-     const [page, setPage] = useState(1);
+    const [page, setPage] = useState(1);
     const [value, setValue] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const navigate=useNavigate();
     // const [value, setValue]=useState('');
     // const [searchResults, setSearchResults]=useState([]);
     // const[data,setData]=useState([]);
     // const [filterData, setFilterData]=useState([]);
     // const [suggestions, setSuggestions] = useState([]);
     const limit = 100; 
-     const threshold = 200; 
+    const threshold = 200; 
 
       useEffect(() => {
         getCitiesData();
@@ -129,6 +132,26 @@ function createCloud() {
             setSearchResults([]);
         }
     }
+    // const cityName = cities.length > 0 ? cities.name : '';
+    const cityData=async(cityName)=>{
+        // const cityName = parsedData.name;
+        // console.log(cityName)
+        const cityD=`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=679e473191c8d6ad799d26c7e8a8c9b8`;
+        const options={
+            method:'GET',
+        };
+        try {
+            const responser=await fetch(cityD,options);
+            const result=await responser.json();
+            // console.log(result);
+            // console.log(result.name);
+        }catch (error) {
+            console.log(error)
+        }
+        // console.log("object");
+        
+        
+    }
     return(
         
         <>
@@ -149,8 +172,11 @@ function createCloud() {
                     {searchResults.map((city, index) => (
                         <div 
                             key={index} 
-                            className="autocomplete-item">
-                            {city.name}
+                            className="autocomplete-item"
+                            >
+                            <Link to={`/city/${city.name}`} onClick={() => cityData(city.name)}>
+                                {city.name}
+                            </Link>
                             </div>
                     ))}
                 </div>
@@ -178,7 +204,13 @@ function createCloud() {
             {/* console.log('City:', city); */}
             return (
                 <tr key={city.name}>
-                    <td>{city.name}</td>
+                    <td id="smart"> 
+                    <Link to={`/city/${city.name}`} onClick={() => cityData(city.name)}>
+                                {city.name}
+                            </Link>
+                    {/* {city.name} */}
+                    {/* </Link> */}
+                    </td>
                     <td>{city.country}</td>
                     <td>{city.country_code}</td>
                     <td>{city.population}</td>

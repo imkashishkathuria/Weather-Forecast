@@ -1,0 +1,38 @@
+body{
+    background-color: aqua;
+    /* background-image: url('https: //img.freepik.com/premium-psd/white-cloud-isolated-transparent-backgrounds_313905-6184.jpg') */
+}
+
+p{
+    color: rgb(0, 0, 0);
+    font-size: 96px;
+}
+.temp{
+    margin: 53px;
+}
+.city{
+    border: 2px solid black;
+    border-radius: 12px;
+    /* width: 100px;
+    height: 30px; */
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: cadetblue;
+    font-size: 34px;
+    padding: 15px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+hr{
+    margin: 9px;
+}
+
+
+.humidity{
+    margin-right: 0px;
+    margin: 66px;
+}
+.hum{
+    margin: 30px;
+    font-size: 35px;
+}
